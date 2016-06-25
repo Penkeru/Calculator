@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      <div class="calcContainer">
+        <h1 class="calcTitle">Calculator</h1>
+        <hr class="calcSeperator">
+        <ul class="calcOptions">
+          <li><input type="radio" id="standardOption" name="calcOption" value="standard" checked/><label for="standardOption">Standard</label></li>
+          <li><input type="radio" id="scientificOption" name="calcOption" value="scientific"/><label for="scientificOption">Scientific</label></li>
+          <li><input type="radio" id="programmerOption" name="calcOption" value="programmer"/><label for="programmerOption">Programmer</label></li>
+        </ul>
+        <div class="calcMainContent">
+            <input type="text" id="firstOperand" class="operands" onkeypress="return isNumberKey(event)">
+            <select id="operatorSelect" class="operands operator">
+                <option value="plus">+</option>
+                <option value="minus">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select>
+            <input type="text" id="secondOperand" class="operands" onkeypress="return isNumberKey(event)">
+            <span> = </span>
+            <span id="calcResult" class="calcResult"></span>
+        </div>
+      </div>
+      <script src="js/main.js"></script>
+    </body>
+</html>
