@@ -59,13 +59,13 @@ var Calculator = function(calcType){
         'programmer':ProgrammerCalc
     };
     var selectedCalculator = CalculatorMAP[calcType] || StandardCalc;
-    var selectboxElement = document.getElementById("operatorSelect");
-    var resultSpan = document.getElementById("calcResult");
+    var selectboxElement;
+    var resultSpan;
 
-    var operand1 = document.getElementById("firstOperand");
-    var operand2 = document.getElementById("secondOperand");
+    var operand1;
+    var operand2;
 
-    var calcOptions = document.getElementsByName("calcOption");
+    var calcOptions;
 
     var clearInput = function(){
         operand1.value ="";
@@ -112,6 +112,13 @@ var Calculator = function(calcType){
 
 
     var init = function(){
+        selectboxElement = document.getElementById("operatorSelect");
+        resultSpan = document.getElementById("calcResult");
+
+        operand1 = document.getElementById("firstOperand");
+        operand2 = document.getElementById("secondOperand");
+
+        calcOptions = document.getElementsByName("calcOption");
         for(calcOption in calcOptions) {
             calcOptions[calcOption].onclick = function() {
                 selectedCalculator = CalculatorMAP[this.value];
@@ -128,10 +135,8 @@ var Calculator = function(calcType){
     return {
         init:init
     }
-
-
-
 };
+
 
 var isNumberKey = function(evt){
     var charCode = (evt.which) ? evt.which : evt.keyCode;
